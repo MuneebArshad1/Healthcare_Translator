@@ -1,6 +1,13 @@
-fastapi
-uvicorn
-requests
-gTTS
-pydantic
+fastapi==0.115.6
+uvicorn[standard]==0.30.6
+python-dotenv==1.0.1
+requests==2.32.3
 
+# Gen-AI bits
+openai==1.54.3        # Whisper API client
+           # text-to-speech
+gTTS==2.5.4
+
+
+# FastAPI uploads
+python-multipart==0.0.9

@@ -30,8 +30,8 @@ function App() {
       return;
     }
     const recognition = new SR();
-    recognition.lang = "en-US";        // input language (you can make this selectable later)
-    recognition.interimResults = true;  // show words as you speak
+    recognition.lang = "en-US";
+    recognition.interimResults = true;
     recognition.continuous = true;
 
     recognition.onresult = (event) => {
@@ -102,11 +102,14 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Healthcare Translator</h1>
+      <header>
+        <h1>🩺 Healthcare Translator</h1>
+        <p className="subtitle">Speak, translate, and listen instantly</p>
+      </header>
 
       <div className="controls">
         {!listening ? (
-          <button onClick={startListening}>🎤 Start Listening</button>
+          <button className="primary" onClick={startListening}>🎤 Start Listening</button>
         ) : (
           <button className="stop" onClick={stopListening}>⏹ Stop</button>
         )}
@@ -119,26 +122,26 @@ function App() {
           ))}
         </select>
 
-        <button onClick={handleTranslate} disabled={loading}>
+        <button className="primary" onClick={handleTranslate} disabled={loading}>
           {loading ? "Translating..." : "🌐 Translate & Speak"}
         </button>
 
-        <button className="secondary" onClick={clearAll}>Clear</button>
+        <button className="secondary" onClick={clearAll}>🧹 Clear</button>
       </div>
 
       <div className="panel">
-        <h3>Original Transcript</h3>
-        <p>{transcript || "…"}</p>
+        <h3>🗣 Original Transcript</h3>
+        <p>{transcript || "Waiting for your speech..."}</p>
       </div>
 
       <div className="panel">
-        <h3>Translated Text</h3>
-        <p>{translated || "…"}</p>
+        <h3>🌎 Translated Text</h3>
+        <p>{translated || "No translation yet."}</p>
       </div>
 
       {audioUrl && (
         <div className="panel">
-          <h3>Audio Playback</h3>
+          <h3>🔊 Audio Playback</h3>
           <ReactAudioPlayer src={audioUrl} controls autoPlay />
         </div>
       )}

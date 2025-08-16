@@ -1,43 +1,111 @@
-* { box-sizing: border-box; }
-
-.App {
-  font-family: system-ui, Arial, sans-serif;
-  max-width: 900px;
-  margin: 24px auto;
-  padding: 16px;
+* {
+  box-sizing: border-box;
 }
 
-h1 { margin-bottom: 16px; }
+body {
+  background: #f4f6f8;
+  margin: 0;
+}
+
+.App {
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  max-width: 900px;
+  margin: 24px auto;
+  padding: 20px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+}
+
+header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+header h1 {
+  margin: 0;
+  color: #1976d2;
+}
+
+.subtitle {
+  color: #666;
+  font-size: 14px;
+}
 
 .controls {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
-  margin-bottom: 16px;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 20px;
 }
 
 button, select {
   padding: 10px 14px;
-  border: 0;
+  border: none;
   border-radius: 8px;
+  font-size: 14px;
+  transition: all 0.2s ease-in-out;
+}
+
+button.primary {
   background: #1976d2;
   color: white;
-  cursor: pointer;
-  font-size: 14px;
 }
 
-button.stop { background: #d32f2f; }
-button.secondary { background: #616161; }
-button:disabled { opacity: 0.7; cursor: not-allowed; }
-select { background: #424242; }
+button.primary:hover {
+  background: #145ca1;
+}
+
+button.stop {
+  background: #d32f2f;
+  color: white;
+}
+
+button.stop:hover {
+  background: #a12222;
+}
+
+button.secondary {
+  background: #616161;
+  color: white;
+}
+
+button.secondary:hover {
+  background: #4a4a4a;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+select {
+  background: #424242;
+  color: white;
+}
+
+select:hover {
+  background: #333;
+}
 
 .panel {
-  background: #f7f7f7;
-  border: 1px solid #e5e5e5;
+  background: #fdfdfd;
+  border: 1px solid #eee;
   border-radius: 10px;
-  padding: 12px;
-  margin-bottom: 12px;
+  padding: 14px;
+  margin-bottom: 14px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.02);
 }
 
-.panel h3 { margin: 0 0 8px; }
-.panel p { margin: 0; min-height: 40px; white-space: pre-wrap; }
+.panel h3 {
+  margin: 0 0 8px;
+  color: #333;
+}
+
+.panel p {
+  margin: 0;
+  min-height: 40px;
+  white-space: pre-wrap;
+  color: #555;
+}
