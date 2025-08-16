@@ -1,0 +1,43 @@
+* { box-sizing: border-box; }
+
+.App {
+  font-family: system-ui, Arial, sans-serif;
+  max-width: 900px;
+  margin: 24px auto;
+  padding: 16px;
+}
+
+h1 { margin-bottom: 16px; }
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+button, select {
+  padding: 10px 14px;
+  border: 0;
+  border-radius: 8px;
+  background: #1976d2;
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+button.stop { background: #d32f2f; }
+button.secondary { background: #616161; }
+button:disabled { opacity: 0.7; cursor: not-allowed; }
+select { background: #424242; }
+
+.panel {
+  background: #f7f7f7;
+  border: 1px solid #e5e5e5;
+  border-radius: 10px;
+  padding: 12px;
+  margin-bottom: 12px;
+}
+
+.panel h3 { margin: 0 0 8px; }
+.panel p { margin: 0; min-height: 40px; white-space: pre-wrap; }
